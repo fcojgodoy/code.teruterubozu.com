@@ -1,0 +1,17 @@
+ul.nav {
+  padding: 60px 9% 5%;
+  list-style: none;
+  counter-reset: item;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  .menu-item {
+    margin: 0;
+  }
+
+  @include media-breakpoint-up(sm) {
+    padding: 90px 9% 5%;
+  }
+}
