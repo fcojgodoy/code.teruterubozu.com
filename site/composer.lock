@@ -4,7 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c49c150a11f114a9244d2f1944ce49e9",
+    "hash": "c96e131f738b858c76b8e0d6270260cf",
+    "content-hash": "85348c105ddbf23eeb3267b36c8d2219",
     "packages": [
         {
             "name": "composer/installers",
@@ -339,6 +340,26 @@
                 "environment"
             ],
             "time": "2016-09-01 10:05:43"
+        },
+        {
+            "name": "wpackagist-plugin/theme-check",
+            "version": "20160523.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/theme-check/",
+                "reference": "tags/20160523.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/theme-check.20160523.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/theme-check/"
         }
     ],
     "packages-dev": [

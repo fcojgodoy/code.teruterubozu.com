@@ -5,7 +5,7 @@
 wordpress_sites:
   teruterubozu.com:
     site_hosts:
-      - canonical: bozu.es
+      - canonical: vps360130.ovh.net
         # redirects:
         #   - otherdomain.com
     local_path: ../site # path targeting local Bedrock site directory (relative to Ansible root)
@@ -19,3 +19,6 @@ wordpress_sites:
       provider: letsencrypt
     cache:
       enabled: true
+      duration: 30s
+      skip_cache_uri: /wp-admin/|/xmlrpc.php|wp-.*.php|/feed/|index.php|sitemap(_index)?.xml
+      skip_cache_cookie: comment_author|wordpress_[a-f0-9]+|wp-postpass|wordpress_no_cache|wordpress_logged_in
