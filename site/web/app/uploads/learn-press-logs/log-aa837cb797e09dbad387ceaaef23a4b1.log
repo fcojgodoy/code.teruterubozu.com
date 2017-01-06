@@ -1,0 +1,10 @@
+-----11-12-2016 @ 18:39:58 ------
+create_table
+-----11-12-2016 @ 18:39:58 ------
+create_table
+-----11-12-2016 @ 18:39:58 ------
+
+			SELECT user_item_id, item_id
+			FROM wp_learnpress_user_items
+			WHERE ref_id = 0
+		
