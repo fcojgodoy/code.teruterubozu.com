@@ -2,7 +2,7 @@
 <nav class="main-menu pushy pushy-right">
 
   <!-- Atom: menu-title -->
-  <h3 class="menu-title"> <?php echo __("MENU", "sage") ?> </h3>
+  <h3 class="menu-title"> <?php echo __('MENU', 'teruterubozu') ?> </h3>
 
   <!-- Atom: menu-close -->
   <a href="#" class="menu-close pushy-link">
@@ -15,6 +15,6 @@
   endif;
   ?>
 
-  <a href="<?php bloginfo('atom_url'); ?>" type="button" class="subscribe-button"><?php echo __('Subscribe', 'sage') ?></a>
+  <a href="<?php bloginfo('atom_url'); ?>" type="button" class="subscribe-button"><?php echo __('Subscribe', 'teruterubozu') ?></a>
 
 </nav>

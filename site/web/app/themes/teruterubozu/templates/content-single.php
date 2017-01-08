@@ -74,7 +74,7 @@
 
       </div>
 
-    <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
+    <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'teruterubozu'), 'after' => '</p></nav>']); ?>
 
     </footer>
 
@@ -100,7 +100,7 @@
           <div class="wrap">
 
             <!-- Atom: nav-post-button -->
-            <span class="nav-post-button btn"><?php echo __('Read this next', 'sage') ?></span>
+            <span class="nav-post-button btn"><?php echo __('Read this next', 'teruterubozu') ?></span>
             <!-- Atom: nav-post-title -->
             <h2 class="nav-post-title"><?php echo get_the_title( $nextPost->ID ) ?></h2>
             <!-- <?php echo get_the_excerpt( $nextPost->ID ) ?> -->
@@ -126,7 +126,7 @@
           <div class="wrap">
 
             <!-- Atom: nav-post-button -->
-            <span class="nav-post-button btn"><?php echo __('You might enjoy', 'sage') ?></span>
+            <span class="nav-post-button btn"><?php echo __('You might enjoy', 'teruterubozu') ?></span>
             <!-- Atom: nav-post-title -->
             <h2 class="nav-post-title"><?php echo get_the_title( $prevPost->ID ) ?></h2>
             <!-- <?php echo get_the_excerpt( $prevPost->ID ) ?> -->

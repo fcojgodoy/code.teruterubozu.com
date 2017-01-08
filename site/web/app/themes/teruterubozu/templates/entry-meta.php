@@ -11,7 +11,7 @@
     <a class="author-link" rel="author" href="<?= get_author_posts_url(get_the_author_meta('ID')); ?>"><?= get_the_author(); ?></a>
 
     <!-- Atom: tags-links -->
-    <spam class="tags"><?php the_tags( __('on ', 'Sage') ); ?></spam>
+    <spam class="tags"><?php the_tags( __('on ', 'teruterubozu') ); ?></spam>
 
   <?php else: ?>
   <?php endif; ?>

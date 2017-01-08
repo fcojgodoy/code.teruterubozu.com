@@ -125,7 +125,7 @@ if (!class_exists('Piklist_Checker'))
 
         <?php if(piklist_checker::$theme == true) : ?>
 
-          <p><strong><?php _e('Your theme requires PIKLIST to work properly.', 'piklist'); ?></strong></p>
+          <p><strong><?php _e('Your theme requires PIKLIST to work properly.', 'teruterubozu'); ?></strong></p>
 
         <?php endif; ?>
 
@@ -135,7 +135,7 @@ if (!class_exists('Piklist_Checker'))
 
             <strong>
 
-              <?php _e('The following plugin(s) require PIKLIST, and have been deactivated:', 'piklist'); ?>
+              <?php _e('The following plugin(s) require PIKLIST, and have been deactivated:', 'teruterubozu'); ?>
             
               <?php foreach(piklist_checker::$plugins as $plugin): $data = get_plugin_data($plugin); ?>
               
@@ -151,7 +151,7 @@ if (!class_exists('Piklist_Checker'))
 
         <?php endif; ?>
      
-        <h4><?php _e('You can:', 'piklist'); ?></h4>
+        <h4><?php _e('You can:', 'teruterubozu'); ?></h4>
 
         <ol>
 
@@ -164,32 +164,32 @@ if (!class_exists('Piklist_Checker'))
 
               if (self::$type == 'single' || self::$type == 'single-network'):
 
-                $activate = '<a href="' . wp_nonce_url(admin_url() . 'plugins.php?action=activate&amp;plugin=' . $piklist_file . '&amp;plugin_status=' . $context . '&amp;s=' . $s, 'activate-plugin_' . $piklist_file) . '" title="' . esc_attr__('Activate Piklist for this site', 'piklist') . '" class="edit">' . __('Activate Piklist for this site', 'piklist') . '</a>';
+                $activate = '<a href="' . wp_nonce_url(admin_url() . 'plugins.php?action=activate&amp;plugin=' . $piklist_file . '&amp;plugin_status=' . $context . '&amp;s=' . $s, 'activate-plugin_' . $piklist_file) . '" title="' . esc_attr__('Activate Piklist for this site', 'teruterubozu') . '" class="edit">' . __('Activate Piklist for this site', 'teruterubozu') . '</a>';
                 echo '<li>' . $activate . '</li>';
 
               endif;
               
               if ((self::$type == 'network' || self::$type == 'single-network') && is_multisite() && is_super_admin()):
 
-                $activate = '<a href="' . wp_nonce_url(network_admin_url() . 'plugins.php?action=activate&amp;plugin=' . $piklist_file . '&amp;plugin_status=' . $context . '&amp;s=' . $s, 'activate-plugin_' . $piklist_file) . '" title="' . esc_attr__('Network Activate Piklist for all sites.', 'piklist') . '" class="edit">' . __('Network Activate Piklist for all sites.', 'piklist') . '</a>';
+                $activate = '<a href="' . wp_nonce_url(network_admin_url() . 'plugins.php?action=activate&amp;plugin=' . $piklist_file . '&amp;plugin_status=' . $context . '&amp;s=' . $s, 'activate-plugin_' . $piklist_file) . '" title="' . esc_attr__('Network Activate Piklist for all sites.', 'teruterubozu') . '" class="edit">' . __('Network Activate Piklist for all sites.', 'teruterubozu') . '</a>';
                 echo '<li>' . $activate . '</li>';
 
               endif;
 
             else:
 
-              $install = '<a href="' . wp_nonce_url(network_admin_url() . 'update.php?action=install-plugin&amp;plugin=piklist', 'install-plugin_' . 'piklist') . '"title="' . esc_attr__('Install Piklist', 'piklist') . '" class="edit">' . __('Install Piklist', 'piklist') . '</a>';
+              $install = '<a href="' . wp_nonce_url(network_admin_url() . 'update.php?action=install-plugin&amp;plugin=piklist', 'install-plugin_' . 'piklist') . '"title="' . esc_attr__('Install Piklist', 'teruterubozu') . '" class="edit">' . __('Install Piklist', 'teruterubozu') . '</a>';
               echo '<li>' . $install . '</li>';
 
             endif;
 
             if(!empty(piklist_checker::$plugins)) :
 
-              printf(__('%1$s %2$sDismiss this message.', 'piklist'),'<li>', '<a href="' . $url_proper_dashboard . '">','</a>', '</li>');
+              printf(__('%1$s %2$sDismiss this message.', 'teruterubozu'),'<li>', '<a href="' . $url_proper_dashboard . '">','</a>', '</li>');
 
             else :
 
-              printf(__('%1$s %2$sChange your theme.', 'piklist'),'<li>', '<a href="' . admin_url() . 'themes.php' . '">','</a>', '</li>');
+              printf(__('%1$s %2$sChange your theme.', 'teruterubozu'),'<li>', '<a href="' . admin_url() . 'themes.php' . '">','</a>', '</li>');
               
 
             endif;

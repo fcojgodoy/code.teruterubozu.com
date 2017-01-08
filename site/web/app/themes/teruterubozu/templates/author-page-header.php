@@ -28,7 +28,7 @@
       <?php endif; ?>
 
       <?php if (get_the_author_posts()) : ?>
-        <em class="author-stats icon-stats"><?php echo get_the_author_posts() . " " . __('posts', 'sage'); ?> </em>
+        <em class="author-stats icon-stats"><?php echo get_the_author_posts() . " " . __('posts', 'teruterubozu'); ?> </em>
       <?php endif; ?>
 
     </div>
