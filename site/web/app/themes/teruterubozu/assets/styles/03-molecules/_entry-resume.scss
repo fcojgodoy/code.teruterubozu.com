@@ -4,4 +4,10 @@
   @include media-breakpoint-up(sm) {
     padding-bottom: 0;
   }
+
+  // If is sticky
+  &.sticky {
+    border-left: 4px solid #4a4a4a;
+    padding-left: 20px;
+  }
 }
