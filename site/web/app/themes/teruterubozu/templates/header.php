@@ -69,7 +69,7 @@
     <?php the_custom_logo() ?>
     <?php if (!has_custom_logo()) : ?>
     <!-- No Custom Logo, just display the site's name -->
-    <a class="navbar-brand a2" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
+    <a class="navbar-brand site-name" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
     <?php endif; ?>
 
     <!-- Atom: menu-button -->
