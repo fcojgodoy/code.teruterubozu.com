@@ -42,7 +42,7 @@ add_filter( 'body_class', __NAMESPACE__ . '\\add_no_featured_image_body_class' )
  * Clean up the_excerpt()
  */
 function excerpt_more() {
-  return ' <a class="excerpt-more" href="' . get_permalink() . '">»</a>';
+  return ' <a class="excerpt-more" href="' . get_permalink() . '">&raquo;</a>';
 }
 add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
 
@@ -93,7 +93,7 @@ function bootstrap_wrap_oembed( $html ){
 add_filter( 'embed_oembed_html', __NAMESPACE__ . '\\bootstrap_wrap_oembed',10,1);
 
 /**
- * Getting rid of archive “label”
+ * Getting rid of archive 'label'
  * https://developer.wordpress.org/reference/functions/get_the_archive_title/
  */
  function getting_rid_archive_label( $title ) {
