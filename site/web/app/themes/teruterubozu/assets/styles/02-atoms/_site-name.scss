@@ -1,0 +1,7 @@
+.site-name {
+  color: hsla(0,0%,100%,.8);
+
+  @include hover-focus-active {
+    color:#fff;
+  }
+}
