@@ -1,7 +1,7 @@
 === Plugin Name ===
 Contributors: fcjgodoy
 Donate link: francisco.godoy@openmailbox.org
-Tags: ghost, casper, clone, copy, white, hero header, clean, lite, simple
+Tags: blog, one-column, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, full-width-template, microformats, sticky-post, translation-ready
 Requires at least: 3.0.1
 Tested up to: 4.7
 Stable tag: 0.1
