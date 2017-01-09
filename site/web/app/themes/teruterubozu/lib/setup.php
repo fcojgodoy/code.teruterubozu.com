@@ -47,6 +47,10 @@ function setup() {
   // Use main stylesheet for visual editor
   // To add custom styles edit /assets/styles/layouts/_tinymce.scss
   add_editor_style(Assets\asset_path('styles/main.css'));
+
+  // Enable automatic feed links
+  // https://codex.wordpress.org/Automatic_Feed_Links
+  add_theme_support( 'automatic-feed-links' );
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
 
