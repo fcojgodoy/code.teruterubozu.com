@@ -108,10 +108,18 @@ function assets() {
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
 
-/*
+/**
  * Add support for SoundCloud oEmbed-Enabled site
  */
 function add_oembed_soundcloud(){
   wp_oembed_add_provider( 'http://soundcloud.com/*', 'http://soundcloud.com/oembed' );
 }
 add_action('init', __NAMESPACE__ . '\\add_oembed_soundcloud');
+
+/**
+ * Specify the $content_width variable
+ * https://codex.wordpress.org/Content_Width
+ */
+if ( ! isset( $content_width ) ) {
+	$content_width = 894.6;
+}
