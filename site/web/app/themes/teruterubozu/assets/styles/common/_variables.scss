@@ -33,46 +33,6 @@ $sidebar-sm-columns:    4;
 // Colors
 //
 
-/* Apuntes de colores originales
- * Fonts: 			#3A4145
- * Fonts secondary: #9EABB3
- * Select fonts: 	#D6EDFF
- * Hs:  			#2E2E2E
- * Hs link: 		#4A4A4A
- *  &:hover:		 #111111
- * Links: 			#4A4A4A
- *  &hover: 		 #111111
- *
- *
- * MOLECULES
- *
- * Linea deco.
- *  line: 		#EBF2F6
- *  circle: 	#E7EEF2
- *
- * Buttons
- *  font: 		#9EABB3
- *   &:hover:  	 #889093
- *  border: 	#BFC8CD
- *   &:hover:  	 #98A0A4
- *
- * ORGANISMS
- *
- * Blockquotes
- *  Vertical-line:  #4A4A4A
- *
- * Jumbotron
- *  H1 home:  		#ffffff
- *  H1 home subt.: 	rgba(255, 255, 255, 0.8)
- *  Arrow: 		rgba(255, 255, 255, 0.7)
- *   &hover: 	#ccc
- *
- * Footer
- *  font: 		#BBC7CC
- *  links:  	#BBC7CC
- *
- */
-
 $brand-primary:           #4A4A4A;
 $brand-primary-dark:      ($brand-primary - 28); // #2E2E2E
 $brand-primary-darker:    ($brand-primary - 57); // #111
@@ -159,21 +119,13 @@ $font-family-monospace:  Inconsolata, monospace, sans-serif;
 $font-family-base:       $font-family-serif;
 
 // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
-$font-size-root: 10px; // FIXME: 16.2px, pero habrá que mirar tmb los headers
+$font-size-root: 10px;
 
 $font-size-base: 1.625rem;
 // $font-size-lg:   1.25rem;
 // $font-size-sm:   .89463rem;
 // $font-size-sm:   .92336rem;
 // $font-size-xs:   .80024rem; //13px
-
-// // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
-// $font-size-root: 18px;
-//
-// $font-size-base: 1rem;
-// $font-size-lg:   1.25rem;
-// $font-size-sm:   .875rem;
-// $font-size-xs:   .75rem;
 
 $line-height-base: 1.75;
 

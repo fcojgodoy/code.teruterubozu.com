@@ -6,4 +6,8 @@ blockquote {
 
   font-size: $blockquote-font-size;
   font-style: italic;
+
+  @include media-breakpoint-up (md) {
+    margin-left: -2.2em;
+  }
 }

@@ -11,4 +11,4 @@
   <?php get_template_part('templates/content', 'search'); ?>
 <?php endwhile; ?>
 
-<?php the_posts_navigation(); ?>
+<?php get_template_part('templates/posts', 'navigation'); ?>

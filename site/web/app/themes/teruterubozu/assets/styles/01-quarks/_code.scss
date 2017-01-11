@@ -5,7 +5,7 @@ code {
   border-radius: 2px;
   white-space: pre-wrap;
 
-  font-size: 0.85em;
+  font-size: 1.62rem;
 }
 
 pre {
@@ -13,9 +13,10 @@ pre {
   padding: 10px;
   border: 1px solid #e3edf3;
 
+  font-size: 1.62rem;
+  line-height: 31.5px;
+
   code {
     border: none;
-    font-size: 1.539rem;
-    line-height: 28.3px;
   }
 }

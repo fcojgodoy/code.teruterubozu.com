@@ -3,6 +3,11 @@
   margin-top: -50px;
   text-align: center;
 
+  // Modifier: if header is no-cover
+  .no-cover + div & {
+    margin-top: -20px;
+  }
+
   // Margins of the atoms
   .author-title {
     margin:{

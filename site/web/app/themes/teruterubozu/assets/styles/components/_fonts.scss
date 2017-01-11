@@ -1,1 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:400,700');
+
+body {
+  // letter-spacing: $letter-spacing-base;
+  font-feature-settings: 'kern' 1;
+  text-rendering: geometricPrecision;
+  letter-spacing: .01rem;
+  word-wrap: break-word;
+}
+
+::selection {
+    background: #D6EDFF;
+}

@@ -23,7 +23,6 @@
       <header class="main-header main-header_author no-cover">
     <?php endif; ?>
 
-
   <?php elseif (is_tag()) : ?>
 
     <?php
@@ -38,23 +37,27 @@
       <header class="main-header main-header_tag no-cover aligner">
     <?php endif; ?>
 
-      <!-- Molecule: tag-page-hgroup -->
-      <div class="vertical">
-        <hgroup class="tag-page-hgroup">
+    <!-- Molecule: tag-page-hgroup -->
+    <div class="vertical">
+      <div class="label-page-hgroup">
 
-          <h1 class="tag-title"> <?php single_tag_title(); ?> </h1>
+        <h1 class="label-title"> <?php single_tag_title(); ?> </h1>
 
-          <!-- Atom: tag-description -->
-          <h2 class="tag-description"> <?php echo term_description(); ?> </h2>
+        <!-- Atom: tag-description -->
+        <h2 class="label-description"> <?php echo term_description(); ?> </h2>
 
-        </hgroup>
       </div>
+    </div>
+
+  <?php elseif (is_search()) : ?>
+
+    <header class="main-header main-header_search no-cover aligner">
 
   <?php else: ?>
 
-    <?php if (has_post_thumbnail()) : ?>
-      <!-- Organism: main-header_entry (size according to wp_is_mobile) -->
-      <header class="main-header main-header_entry" style="background-image: url('<?php if (wp_is_mobile()) {the_post_thumbnail_url('medium');} else {the_post_thumbnail_url('');} ?>')">
+  <?php if (has_post_thumbnail()) : ?>
+    <!-- Organism: main-header_entry (size according to wp_is_mobile) -->
+    <header class="main-header main-header_entry" style="background-image: url('<?php if (wp_is_mobile()) {the_post_thumbnail_url('medium');} else {the_post_thumbnail_url('');} ?>')">
     <?php else: ?>
       <header class="main-header main-header_entry no-cover">
     <?php endif; ?>
@@ -82,13 +85,13 @@
 
     <!-- Molecule: site-hgroup -->
     <div class="vertical">
-      <hgroup class="site-hgroup">
+      <div class="site-hgroup">
 
         <h1 class="site-title"><?php bloginfo('name') ?></h1>
 
         <h2 class="site-description"><?php bloginfo('description') ?></h2>
 
-      </hgroup>
+      </div>
     </div>
 
   <?php endif; ?>
@@ -97,7 +100,7 @@
   <?php if ( !is_paged() && get_header_image() ) : ?>
 
     <!-- Atom: scroll-down-arrow -->
-    <a class="scroll-down-arrow icon-arrow-left js-scrolltoid radial-gradient" href="#js-scrollto" data-offset="45"><span hidden="true">Scroll Down</span></a>
+    <a class="scroll-down-arrow icon-arrow-left js-scrolltoid radial-gradient" href="#js-scrollto" data-offset="45"><span hidden>Scroll Down</span></a>
 
   <?php endif; ?>
 

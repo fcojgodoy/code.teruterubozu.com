@@ -22,11 +22,11 @@
   // Only float if not on an extra small device
   .alignleft {
     float: left;
-    margin-right: ($spacer / 2);
+    margin-right: ($spacer * 1.5);
   }
   .alignright {
     float: right;
-    margin-left: ($spacer / 2);
+    margin-left: ($spacer * 1.5);
   }
 }
 
@@ -37,6 +37,7 @@
 }
 .wp-caption-text {
   @extend .figure-caption;
+  padding-top: $spacer;
 }
 .gallery-caption {
   @extend .figure-caption;

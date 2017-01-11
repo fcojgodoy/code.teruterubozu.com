@@ -54,29 +54,6 @@ function setup() {
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
 
-/**
- * Register sidebars
- */
-// function widgets_init() {
-//   register_sidebar([
-//     'name'          => __('Primary', 'teruterubozu'),
-//     'id'            => 'sidebar-primary',
-//     'before_widget' => '<section class="widget %1$s %2$s">',
-//     'after_widget'  => '</section>',
-//     'before_title'  => '<h3>',
-//     'after_title'   => '</h3>'
-//   ]);
-//
-//   register_sidebar([
-//     'name'          => __('Footer', 'teruterubozu'),
-//     'id'            => 'sidebar-footer',
-//     'before_widget' => '<section class="widget %1$s %2$s">',
-//     'after_widget'  => '</section>',
-//     'before_title'  => '<h3>',
-//     'after_title'   => '</h3>'
-//   ]);
-// }
-// add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');
 
 /**
  * Determine which pages should NOT display the sidebar

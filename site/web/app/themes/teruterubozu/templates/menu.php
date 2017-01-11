@@ -6,7 +6,7 @@
 
   <!-- Atom: menu-close -->
   <a href="#" class="menu-close pushy-link">
-    <span hidden="true">Close</span>
+    <span hidden>Close</span>
   </a>
 
   <?php
@@ -15,6 +15,6 @@
   endif;
   ?>
 
-  <a href="<?php bloginfo('atom_url'); ?>" type="button" class="subscribe-button"><?php echo __('Subscribe', 'teruterubozu') ?></a>
+  <a href="<?php bloginfo('atom_url'); ?>" class="subscribe-button"><?php echo __('Subscribe', 'teruterubozu') ?></a>
 
 </nav>

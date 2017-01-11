@@ -13,12 +13,9 @@ use Roots\Sage\Wrapper;
       get_template_part('templates/menu');
     ?>
 
-    <!-- Site Overlay (Pushy) -->
-    <div class="site-overlay"></div>
+    <div class="site-overlay"></div><!-- Site Overlay (Pushy) -->
 
-    <!-- Container for (Pushy) -->
-    <div class="site-wrapper" id="container">
-      <!-- FIXME: colocar #container en su sitio y usar este tip: https://github.com/christophery/pushy#tips -->
+    <div class="site-wrapper" id="container"><!-- Container for (Pushy) -->
 
       <!--[if IE]>
         <div class="alert alert-warning">

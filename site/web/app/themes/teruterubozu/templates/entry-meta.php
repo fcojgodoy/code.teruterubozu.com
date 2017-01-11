@@ -1,5 +1,5 @@
 <!-- Molecule: entry-meta -->
-<p class="entry-meta">
+<div class="entry-meta">
 
   <!-- If is not single page -->
   <?php if (!is_single() ) : ?>
@@ -11,12 +11,19 @@
     <a class="author-link" rel="author" href="<?= get_author_posts_url(get_the_author_meta('ID')); ?>"><?= get_the_author(); ?></a>
 
     <!-- Atom: tags-links -->
-    <spam class="tags"><?php the_tags( __('on ', 'teruterubozu') ); ?></spam>
+    <div class="tags"><?php the_tags( '<span class="tags-on">' . __('on ', 'teruterubozu') . '</span>' ); ?></div>
 
+    <!-- Atom: post-updated -->
+    <time class="post-updated" datetime="<?= get_post_time('d F Y'); ?>"><?= get_the_date('d F Y'); ?></time>
   <?php else: ?>
+
+    <!-- Atom: post-updated -->
+    <time class="post-updated" datetime="<?= get_post_time('d F Y'); ?>"><?= get_the_date('d F Y'); ?></time>
+
+    <!-- Atom: tags-links -->
+    <div class="tags"><?php the_tags( __('on ', 'teruterubozu') ); ?></div>
+
   <?php endif; ?>
 
-  <!-- Atom: post-updated -->
-  <time class="post-updated" datetime="<?= get_post_time('d F Y'); ?>"><?= get_the_date('d F Y'); ?></time>
 
-</p>
+</div>

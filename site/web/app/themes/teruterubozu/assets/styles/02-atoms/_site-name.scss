@@ -1,7 +1,18 @@
 .site-name {
   color: hsla(0,0%,100%,.8);
 
+  max-width: 70%;
+
   @include hover-focus-active {
     color:#fff;
+  }
+
+  // Modifier: when is in header with no cover
+  .no-cover & {
+    color: #9eabb3;
+
+    @include hover-focus-active {
+      color:#555;
+    }
   }
 }

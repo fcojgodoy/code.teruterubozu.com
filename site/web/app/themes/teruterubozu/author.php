@@ -2,9 +2,7 @@
 
 <?php if (is_paged()): ?>
   <?php get_template_part('templates/posts', 'navigation'); ?>
-
   <hr class="decorative-line">
-
 <?php endif; ?>
 
 
