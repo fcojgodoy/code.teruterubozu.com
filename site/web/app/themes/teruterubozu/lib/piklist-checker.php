@@ -1,5 +1,7 @@
 <?php
 
+namespace Roots\Sage\Piklist;
+
 /*
  * Add Piklist Checker
  * https://piklist.com/learn/doc/piklist-checker/

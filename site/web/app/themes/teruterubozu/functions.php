@@ -19,7 +19,6 @@ $sage_includes = [
   'lib/wrapper.php',   // Theme wrapper class
   'lib/customizer.php', // Theme customizer
   'lib/userfields.php', // Add user's fields
-  'lib/custom-logo.php', // Add Theme logo support
   'lib/piklist-checker.php', // Add Piklist Checker
   'lib/custom-headers.php', // Add Custom Headers support
   // 'lib/wp-bootstrap-gallery.php' // Add Custom Headers support

@@ -1,10 +1,5 @@
-<!-- Organism: main-menu (Pushy) -->
 <nav class="main-menu pushy pushy-right">
-
-  <!-- Atom: menu-title -->
   <h3 class="menu-title"> <?php echo __('MENU', 'teruterubozu') ?> </h3>
-
-  <!-- Atom: menu-close -->
   <a href="#" class="menu-close pushy-link">
     <span hidden>Close</span>
   </a>

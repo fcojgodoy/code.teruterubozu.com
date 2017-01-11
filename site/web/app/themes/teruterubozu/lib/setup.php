@@ -107,3 +107,17 @@ add_action('init', __NAMESPACE__ . '\\add_oembed_soundcloud');
 if ( ! isset( $content_width ) ) {
 	$content_width = 894.6;
 }
+
+/**
+ * Add custom logo support
+ */
+function add_custom_logo() {
+
+	add_theme_support( 'custom-logo', array(
+		'height'      => 50,
+		'width'       => 95,
+		'flex-width' => true,
+	) );
+
+}
+add_action( 'after_setup_theme', __NAMESPACE__ . '\\add_custom_logo' );

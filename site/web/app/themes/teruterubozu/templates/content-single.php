@@ -12,35 +12,29 @@
 
     <footer class="entry-footer">
 
-        <!-- Atom: author-avatar -->
-        <?php echo get_avatar( get_the_author_meta('ID'), 68, null, null, array ( 'class' => array('author-avatar', 'border-double') ) ); ?>
+      <?php echo get_avatar( get_the_author_meta('ID'), 68, null, null, array ( 'class' => array('author-avatar', 'border-double') ) ); ?>
 
-        <div class="author-wrap">
+      <div class="author-wrap">
 
-          <!-- Atom: author-link -->
-          <h4 class="author-link">
-            <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author"><?php echo get_the_author(); ?></a>
-          </h4>
+        <h4 class="author-link">
+          <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author"><?php echo get_the_author(); ?></a>
+        </h4>
 
-          <!-- Atom: author-bio -->
-          <p class="author-bio">
-            <?php echo get_the_author_meta( 'description' ); ?>
-          </p>
+        <p class="author-bio">
+          <?php echo get_the_author_meta( 'description' ); ?>
+        </p>
 
-          <!-- Atom: author-location -->
-          <?php if (get_the_author_meta('city')) : ?>
-            <em class="author-location icon-location"><?php echo get_the_author_meta( 'city' ); ?></em>
-          <?php endif ; ?>
+        <?php if (get_the_author_meta('city')) : ?>
+          <em class="author-location icon-location"><?php echo get_the_author_meta( 'city' ); ?></em>
+        <?php endif ; ?>
 
-          <!-- Atom: author-web -->
-          <?php if (get_the_author_meta( 'url' )) : ?>
-            <em class="author-web icon-link">
-              <a href="<?php echo get_the_author_meta( 'url' ); ?>"><?php echo get_the_author_meta( 'url' ); ?></a>
-            </em>
-          <?php endif; ?>
+        <?php if (get_the_author_meta( 'url' )) : ?>
+          <em class="author-web icon-link">
+            <a href="<?php echo get_the_author_meta( 'url' ); ?>"><?php echo get_the_author_meta( 'url' ); ?></a>
+          </em>
+        <?php endif; ?>
 
-        </div>
-      <!-- </div> -->
+      </div>
 
       <div class="share">
         <h4 class="share-title">Share this post</h4>
@@ -82,11 +76,8 @@
 
   </article>
 
-  <!-- ??: Post navigation -->
   <div class="posts-navigation">
 
-
-    <!-- Molecule: nav-post-newer -->
     <?php $nextPost = get_next_post(); if($nextPost): ?>
       <?php if (has_post_thumbnail( $nextPost->ID ) ): ?>
         <?php $nextthumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($nextPost->ID), '' ); $nextthumbnail = $nextthumbnail[0]; ?>
@@ -95,24 +86,16 @@
       <?php endif; ?>
 
       <div class="nav-post-newer">
-
         <a class="nav-post-link" href="<?php echo get_permalink(get_adjacent_post( false, '', false)); ?>" style="background-image:url(<?php echo $nextthumbnail; ?>);">
           <div class="wrap">
-
-            <!-- Atom: nav-post-button -->
             <span class="nav-post-button btn"><?php echo __('Read this next', 'teruterubozu') ?></span>
-            <!-- Atom: nav-post-title -->
             <h2 class="nav-post-title"><?php echo get_the_title( $nextPost->ID ) ?></h2>
-            <!-- <?php echo get_the_excerpt( $nextPost->ID ) ?> -->
           </div>
         </a>
-
       </div>
 
     <?php endif; ?>
 
-
-    <!-- Molecule: nav-post-older -->
     <?php $prevPost = get_previous_post(); if($prevPost): ?>
       <?php if (has_post_thumbnail( $prevPost->ID ) ): ?>
         <?php $prevthumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($prevPost->ID), '' ); $prevthumbnail = $prevthumbnail[0]; ?>
@@ -124,12 +107,8 @@
 
         <a class="nav-post-link" href="<?php echo get_permalink(get_adjacent_post( false, '', true)); ?>" style="background-image:url(<?php echo $prevthumbnail; ?>);">
           <div class="wrap">
-
-            <!-- Atom: nav-post-button -->
             <span class="nav-post-button btn"><?php echo __('You might enjoy', 'teruterubozu') ?></span>
-            <!-- Atom: nav-post-title -->
             <h2 class="nav-post-title"><?php echo get_the_title( $prevPost->ID ) ?></h2>
-            <!-- <?php echo get_the_excerpt( $prevPost->ID ) ?> -->
           </div>
         </a>
 

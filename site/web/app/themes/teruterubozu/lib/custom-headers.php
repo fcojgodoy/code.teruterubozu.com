@@ -1,8 +1,10 @@
 <?php
 
+namespace Roots\Sage\CustomHeader;
+
 add_theme_support( 'custom-header' );
 
-function themename_custom_header_setup() {
+function custom_header_setup() {
     $defaults = array(
         // Default Header Image to display
         'default-image'         => get_template_directory_uri() . '/images/headers/default.jpg',
@@ -30,4 +32,4 @@ function themename_custom_header_setup() {
         'admin-preview-callback'    => 'adminpreview_cb',
         );
 }
-add_action( 'after_setup_theme', __NAMESPACE__ . '\\themename_custom_header_setup' );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\\custom_header_setup' );
