@@ -52,7 +52,7 @@
   <nav class="navbar">
     <?php the_custom_logo() ?>
     <?php if (!has_custom_logo()) : ?>
-    <a class="navbar-brand site-name" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
+    <a class="navbar-brand site-name" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
     <?php endif; ?>
     <a class="menu-btn icon-menu" href="#"> <span class="word">Menu</span> </a>
   </nav>
