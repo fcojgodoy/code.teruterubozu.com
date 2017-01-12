@@ -1,186 +1,43 @@
 <?php
-/**
- * WP Bootstrap Navwalker
- *
- * @package WP-Bootstrap-Navwalker
- */
 
-/**
- * Class Name: wp_bootstrap_gallery
- * Plugin Name: WP Bootstrap Navwalker
- * Plugin URI: https://github.com/wp-bootstrap/wp-bootstrap-gallery
- * Description: A custom Wordpress gallery for dynamic thumbnail layout using Twitter Bootstrap 2 thumbnail layouts.
- * Version: 1.0.1
- * Author: Edward McIntyre - @twittem, Brandon Hubbard
- * GitHub URI: https://github.com/wp-bootstrap/wp-bootstrap-gallery
- * GitHub Plugin URI: https://github.com/wp-bootstrap/wp-bootstrap-gallery
- * GitHub Branch: master
- * License: GPL-3.0+
- * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
- */
+add_filter( 'post_gallery', 'bootstrap_gallery', 10, 3 );
 
-/**
- * WP Bootstrap Gallery.
- *
- * @access public
- * @param mixed $content Content.
- * @param mixed $attr Attributes.
- * @return void
- */
-function wp_bootstrap_gallery( $content, $attr ) {
-	global $instance, $post;
-	$instance++;
+function bootstrap_gallery( $output = '', $atts, $instance )
+{
+    $atts = array_merge(array('columns' => 3), $atts);
 
-	if ( isset( $attr['orderby'] ) ) {
-		$attr['orderby'] = sanitize_sql_orderby( $attr['orderby'] );
-		if ( ! $attr['orderby'] ) {
-			unset( $attr['orderby'] );
-		}
-	}
+    $columns = $atts['columns'];
+    $images = explode(',', $atts['ids']);
 
-	extract( shortcode_atts( array(
-		'order'			=> 'ASC',
-		'orderby'		=> 'menu_order ID',
-		'id'			=> $post->ID,
-		'itemtag'		=> 'figure',
-		'icontag'		=> 'div',
-		'captiontag'	=> 'figcaption',
-		'columns'		=> 3,
-		'size'			=> 'thumbnail',
-		'include'		=> '',
-		'exclude'		=> '',
-	), $attr ) );
+    if ($columns == 1) { $col_class = 'col-md-12';}
+    else if ($columns == 2) { $col_class = 'col-md-6'; }
+    else if ($columns == 3) { $col_class = 'col-md-4'; }
+    else if ($columns == 4) { $col_class = 'col-md-3'; }
+    // other column counts
 
-	$id = intval( $id );
+    $return = '<div class="row gallery">';
 
-	if ( 'RAND' === $order ) {
-		$orderby = 'none';
-	}
+    $i = 0;
 
-	if ( $include ) {
+    foreach ($images as $key => $value) {
 
-		$include = preg_replace( '/[^0-9,]+/', '', $include );
+        if ($i%$columns == 0 && $i > 0) {
+            $return .= '</div><div class="row gallery">';
+        }
 
-		$_attachments = get_posts( array(
-			'include'			=> $include,
-			'post_status'		=> 'inherit',
-			'post_type'			=> 'attachment',
-			'post_mime_type'	=> 'image',
-			'order'				=> $order,
-			'orderby'			=> $orderby,
-		) );
+        $image_attributes = wp_get_attachment_image_src($value, 'full');
 
-		$attachments = array();
+        $return .= '
+            <div class="'.$col_class.'">
+                <a data-gallery="gallery" href="'.$image_attributes[0].'">
+                    <img src="'.$image_attributes[0].'" alt="" class="img-responsive">
+                </a>
+            </div>';
 
-		foreach ( $_attachments as $key => $val ) {
-			$attachments[ $val->ID ] = $_attachments[ $key ];
-		}
-	} elseif ( $exclude ) {
+        $i++;
+    }
 
-		$exclude = preg_replace( '/[^0-9,]+/', '', $exclude );
+    $return .= '</div>';
 
-		$attachments = get_children( array(
-			'post_parent'		=> $id,
-			'exclude'			=> $exclude,
-			'post_status'		=> 'inherit',
-			'post_type'			=> 'attachment',
-			'post_mime_type'	=> 'image',
-			'order'				=> $order,
-			'orderby'			=> $orderby,
-		) );
-
-	} else {
-
-		$attachments = get_children( array(
-			'post_parent'		=> $id,
-			'post_status'		=> 'inherit',
-			'post_type'			=> 'attachment',
-			'post_mime_type'	=> 'image',
-			'order'				=> $order,
-			'orderby'			=> $orderby,
-		) );
-
-	}
-
-	if ( empty( $attachments ) ) {
-		return;
-	}
-
-	if ( is_feed() ) {
-		$output = "\n";
-		foreach ( $attachments as $att_id => $attachment ) {
-			$output .= wp_get_attachment_link( $att_id, $size, true ) . "\n";
-		}
-		return $output;
-	}
-
-	$itemtag	= tag_escape( $itemtag );
-	$captiontag	= tag_escape( $captiontag );
-	$columns	= intval( min( array( 8, $columns ) ) );
-	$float		= (is_rtl()) ? 'right' : 'left';
-
-	$selector	= "gallery-{$instance}";
-	$size_class	= sanitize_html_class( $size );
-	$output		= "<div class='container'><div class='row' id='$selector'>";
-
-	/**
-		 * Count number of items in $attachments array, and assign a colum layout to $span_array
-		 * variable based on the mumber of images in the $attachments array
-	 */
-	$span_array = null;
-
-	switch ( count( $attachments ) ) {
-		case 1:
-			/* One full width image. */
-	        $span_array = array( 12 );
-	        break;
-	    case 2:
-	    	/* Two half width images. */
-	        $span_array = array( 6,6 );
-	        break;
-	    case 3:
-	    	/* One 3/4 width image with two 1/4 width images to the right. */
-	        $span_array = array( 8,4,4 );
-	        break;
-	    case 4:
-	    	/* One full width image with three 1/3 width images underneath. */
-	    	$span_array = array( 12,4,4,4 );
-	        break;
-	    case 5:
-	    	/* Two half width images with fout 1/4 width images underneath. */
-	    	$span_array = array( 6,6,4,4,4 );
-	        break;
-	    case 6:
-	    	/* One 2/3 width image with two 1/3 width images to the right, and three 1/3 width images underneath. */
-	    	$span_array = array( 8,4,4,4,4,4 );
-	        break;
-	    default:
-	    	/* One full width image with two 1/2 width images underneath. All remaining images 1/3 width underneath. */
-	    	$span_array = array( 12,6,6,4 );
-	        break;
-	}
-
-	$attachment_count = 0;
-
-	foreach ( $attachments as $id => $attachment ) {
-
-		$attachment_image = wp_get_attachment_image( $id, 'full' );
-		$attachment_link = wp_get_attachment_link( $id, 'full', ! ( isset( $attr['link'] ) and 'file' === $attr['link'] ) );
-
-		$output .= "<div class='col-sm-" . $span_array[ $attachment_count ] . "'>";
-		$output .= $attachment_link . "\n";
-		$output .= "</div>\n";
-
-		if ( count( $attachments ) >= 7 && 3 === $attachment_count ) {
-			$attachment_count = 3;
-		} else {
-			$attachment_count++;
-		}
-	}
-
-	$output .= "</div></div>\n";
-
-	return $output;
+    return $return;
 }
-
-add_filter( 'post_gallery', 'wp_bootstrap_gallery', 10, 2 );

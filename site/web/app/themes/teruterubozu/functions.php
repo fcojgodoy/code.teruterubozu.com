@@ -21,7 +21,7 @@ $sage_includes = [
   'lib/userfields.php', // Add user's fields
   'lib/piklist-checker.php', // Add Piklist Checker
   'lib/custom-headers.php', // Add Custom Headers support
-  // 'lib/wp-bootstrap-gallery.php' // Add Custom Headers support
+  'lib/wp-bootstrap-gallery.php' // Add Custom Headers support
 ];
 
 foreach ($sage_includes as $file) {
