@@ -88,7 +88,7 @@
       <div class="nav-post-newer">
         <a class="nav-post-link" href="<?php echo get_permalink(get_adjacent_post( false, '', false)); ?>" style="background-image:url(<?php echo $nextthumbnail; ?>);">
           <div class="wrap">
-            <span class="nav-post-button btn"><?php echo __('Read this next', 'teruterubozu') ?></span>
+            <span class="nav-post-button btn"><?php _e('Read this next', 'teruterubozu') ?></span>
             <h2 class="nav-post-title"><?php echo get_the_title( $nextPost->ID ) ?></h2>
           </div>
         </a>
@@ -107,7 +107,7 @@
 
         <a class="nav-post-link" href="<?php echo get_permalink(get_adjacent_post( false, '', true)); ?>" style="background-image:url(<?php echo $prevthumbnail; ?>);">
           <div class="wrap">
-            <span class="nav-post-button btn"><?php echo __('You might enjoy', 'teruterubozu') ?></span>
+            <span class="nav-post-button btn"><?php _e('You might enjoy', 'teruterubozu') ?></span>
             <h2 class="nav-post-title"><?php echo get_the_title( $prevPost->ID ) ?></h2>
           </div>
         </a>

@@ -1,5 +1,5 @@
 <nav class="main-menu pushy pushy-right">
-  <h3 class="menu-title"> <?php echo __('MENU', 'teruterubozu') ?> </h3>
+  <h3 class="menu-title"> <?php _e('MENU', 'teruterubozu') ?> </h3>
   <a href="#" class="menu-close pushy-link">
     <span hidden>Close</span>
   </a>
@@ -10,6 +10,6 @@
   endif;
   ?>
 
-  <a href="<?php bloginfo('atom_url'); ?>" class="subscribe-button"><?php echo __('Subscribe', 'teruterubozu') ?></a>
+  <a href="<?php bloginfo('atom_url'); ?>" class="subscribe-button"><?php _e('Subscribe', 'teruterubozu') ?></a>
 
 </nav>
