@@ -80,7 +80,8 @@ function display_sidebar() {
  */
 function assets() {
 
-  wp_enqueue_style('sage/google-fonts', 'https://fonts.googleapis.com/css?family=Merriweather:300,300i,700,700i|Open+Sans:400,700', false, null);
+  wp_enqueue_style('sage/google-fonts', 'https://fonts.googleapis.com/css?family=Merriweather:300,300i,700,700i', false, null);
+  wp_enqueue_style('sage/google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,700', false, null);
 
   wp_enqueue_style('sage/css', Assets\asset_path('styles/main.css'), false, null);
 
