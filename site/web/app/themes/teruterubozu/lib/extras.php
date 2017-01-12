@@ -65,7 +65,7 @@ function posts_pagination() {
   if (is_array($page_format) ) {
   $paged = ( get_query_var('paged') == 0 ) ? 1 : get_query_var('paged');
     // echo '<div><ul>';
-    echo '<span>' . __('Page', 'teruterubozu') . ' ' . $paged . ' ' . __('of', 'teruterubozu') . ' ' . $wp_query->max_num_pages .'</span></li>';
+    echo '<span>' . __('Page', 'teruterubozu') . ' ' . $paged . ' ' . __('of', 'teruterubozu') . ' ' . $wp_query->max_num_pages .'</span>';
     // foreach ( $page_format as $page ) {
     //         echo "<li>$page</li>";
     // }

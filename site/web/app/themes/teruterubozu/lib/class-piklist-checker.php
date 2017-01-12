@@ -16,6 +16,8 @@
  * http://s-plugins.wordpress.org/piklist/assets/class-piklist-checker.php
  */
 
+use Roots\Sage\Piklist;
+
 if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 if (!class_exists('Piklist_Checker'))
@@ -79,10 +81,10 @@ if (!class_exists('Piklist_Checker'))
     public static function deactivate_plugins($this_plugin, $type)
     {
       self::$type = $type;
-      
+
       if (self::$type == 'single' || self::$type == 'single-network')
       {
-        $plugins = get_option('active_plugins', array()); 
+        $plugins = get_option('active_plugins', array());
       }
       else
       {
@@ -101,9 +103,9 @@ if (!class_exists('Piklist_Checker'))
         if (strstr($this_plugin, $plugin))
         {
           array_push(piklist_checker::$plugins, $this_plugin);
-          
+
           deactivate_plugins($plugin);
-          
+
           return false;
         }
       }
@@ -136,21 +138,21 @@ if (!class_exists('Piklist_Checker'))
             <strong>
 
               <?php _e('The following plugin(s) require PIKLIST, and have been deactivated:', 'teruterubozu'); ?>
-            
+
               <?php foreach(piklist_checker::$plugins as $plugin): $data = get_plugin_data($plugin); ?>
-              
+
                   <?php piklist_checker::$plugin_list = piklist_checker::$plugin_list . $data['Title'] . ', '; ?>
-               
+
               <?php endforeach; ?>
 
               <?php echo rtrim(piklist_checker::$plugin_list, ", "); ?>
-  
+
             </strong>
 
           </p>
 
         <?php endif; ?>
-     
+
         <h4><?php _e('You can:', 'teruterubozu'); ?></h4>
 
         <ol>
@@ -168,7 +170,7 @@ if (!class_exists('Piklist_Checker'))
                 echo '<li>' . $activate . '</li>';
 
               endif;
-              
+
               if ((self::$type == 'network' || self::$type == 'single-network') && is_multisite() && is_super_admin()):
 
                 $activate = '<a href="' . wp_nonce_url(network_admin_url() . 'plugins.php?action=activate&amp;plugin=' . $piklist_file . '&amp;plugin_status=' . $context . '&amp;s=' . $s, 'activate-plugin_' . $piklist_file) . '" title="' . esc_attr__('Network Activate Piklist for all sites.', 'teruterubozu') . '" class="edit">' . __('Network Activate Piklist for all sites.', 'teruterubozu') . '</a>';
@@ -190,10 +192,10 @@ if (!class_exists('Piklist_Checker'))
             else :
 
               printf(__('%1$s %2$sChange your theme.', 'teruterubozu'),'<li>', '<a href="' . admin_url() . 'themes.php' . '">','</a>', '</li>');
-              
+
 
             endif;
-            
+
           ?>
 
         </ol>
@@ -204,10 +206,10 @@ if (!class_exists('Piklist_Checker'))
           $message = ob_get_contents();
 
           ob_end_clean();
-    
+
           return $message;
     }
-    
+
     public static function show_message($message, $errormsg = true)
     {
       if (!empty(piklist_checker::$plugins) || piklist_checker::$theme == true) : ?>
@@ -224,7 +226,7 @@ if (!class_exists('Piklist_Checker'))
       <?php endif;
     }
   }
-  
+
   piklist_checker::admin_notices();
 
 }
@@ -233,7 +235,7 @@ if (!class_exists('Piklist_Checker'))
  * Changelog
  *
  *
- 
+
   = 0.6.2 =
  * Windows Server support
 
