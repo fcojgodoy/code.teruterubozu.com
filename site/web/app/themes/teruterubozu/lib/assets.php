@@ -10,7 +10,11 @@ class JsonManifest {
 
   public function __construct($manifest_path) {
     if (file_exists($manifest_path)) {
-      $this->manifest = json_decode(file_get_contents($manifest_path), true);
+      // $this->manifest = json_decode(file_get_contents($manifest_path), true);
+
+      $paths = wp_remote_get( $manifest_path, array( 'timeout' => 15 ) );
+      $this->manifest = json_decode( wp_remote_retrieve( $paths ) );
+
     } else {
       $this->manifest = [];
     }
