@@ -9,7 +9,7 @@ Tags: blog, one-column, custom-header, custom-menu, custom-logo, editor-style, f
 
 == Description ==
 
-A clone of Ghost's Casper theme for Wordpress.
+A Wordpress theme based on Ghost's default theme.
 Dev with Sage, Bedrock and Trellis.
 
 For more information about Teruterubozu please go to https://github.com/fcojgodoy/teruterubozu.

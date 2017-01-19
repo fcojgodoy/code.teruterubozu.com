@@ -1,5 +1,5 @@
 # Teruterubozu
-A clone of Ghost's Casper theme for Wordpress.
+A Wordpress theme based on Ghost's default theme
 Coming soon!!
 
 ## Requirements
