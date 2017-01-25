@@ -2,7 +2,7 @@
 Contributors: fcjgodoy
 Requires at least: 4.5
 Tested up to: 4.7.1
-Version: 0.1
+Version: 0.1.2
 License: MIT License
 License URI: http://opensource.org/licenses/MI
 Tags: blog, one-column, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, full-width-template, microformats, sticky-post, translation-ready
@@ -43,5 +43,15 @@ Licenses: The MIT License (MIT)
 Source: https://github.com/zaneray/scrolltoid
 
 == Changelog ==
+
+= 0.1.2 =
+* Released: January 19, 2017
+- Updated style.css
+
+= 0.1.1 =
+* Released: January 19, 2017
+
+- Removed hard-coded date
+- Modified theme description
 
 Initial release
