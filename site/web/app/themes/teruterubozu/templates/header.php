@@ -50,11 +50,11 @@
   <?php endif; ?>
 
   <nav class="navbar">
+
     <?php the_custom_logo() ?>
-    <?php if (!has_custom_logo()) : ?>
-    <a class="navbar-brand site-name" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
-    <?php endif; ?>
-    <a class="menu-btn icon-menu" href="#"> <span class="word">Menu</span> </a>
+
+    <a class="menu-btn icon-menu" href="#"> <span class="word"><?php _e( 'Menu', 'teruterubozu' ) ?></span> </a>
+
   </nav>
 
   <?php if (is_front_page()) : ?>
@@ -67,7 +67,7 @@
   <?php endif; ?>
 
   <?php if ( !is_paged() && get_header_image() ) : ?>
-    <a class="scroll-down-arrow icon-arrow-left js-scrolltoid radial-gradient" href="#js-scrollto" data-offset="45"><span hidden>Scroll Down</span></a>
+    <a class="scroll-down-arrow icon-arrow-left js-scrolltoid radial-gradient" href="#js-scrollto" data-offset="45"><span hidden><?php _e( 'Scroll Down', 'teruterubozu' ) ?></span></a>
   <?php endif; ?>
 
   </header>

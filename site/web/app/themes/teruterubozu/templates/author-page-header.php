@@ -10,8 +10,8 @@
     </h2>
 
     <div class="author-meta">
-      <?php if (get_the_author_meta('city')) : ?>
-        <em class="author-location icon-location"><?php echo get_the_author_meta( 'city' ); ?></em>
+      <?php if (get_the_author_meta( 'location' ) ) : ?>
+        <em class="author-location icon-location"><?php echo get_the_author_meta( 'location' ); ?></em>
       <?php endif ; ?>
 
       <?php if (get_the_author_meta( 'url' )) : ?>
@@ -21,7 +21,7 @@
       <?php endif; ?>
 
       <?php if (get_the_author_posts()) : ?>
-        <em class="author-stats icon-stats"><?php echo get_the_author_posts() . " " . __('posts', 'teruterubozu'); ?> </em>
+        <em class="author-stats icon-stats"><?php echo get_the_author_posts() . " " . __( 'posts', 'teruterubozu' ); ?> </em>
       <?php endif; ?>
 
     </div>

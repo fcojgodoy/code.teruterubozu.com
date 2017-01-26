@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5a921ad13087f664db9f35e280185a9f",
-    "content-hash": "f4d6652ef14b3f75b6bf11a2ff99bdda",
+    "hash": "4f95b1db94debd5671555e3e74b1329d",
+    "content-hash": "55554db3660eb293d20819535d7fe800",
     "packages": [
         {
             "name": "composer/installers",
@@ -340,26 +340,6 @@
                 "environment"
             ],
             "time": "2016-09-01 10:05:43"
-        },
-        {
-            "name": "wpackagist-plugin/piklist",
-            "version": "0.9.9.9",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/piklist/",
-                "reference": "tags/0.9.9.9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/piklist.0.9.9.9.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/piklist/"
         },
         {
             "name": "wpackagist-plugin/theme-check",

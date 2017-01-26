@@ -51,6 +51,42 @@ function setup() {
   // Enable automatic feed links
   // https://codex.wordpress.org/Automatic_Feed_Links
   add_theme_support( 'automatic-feed-links' );
+
+  // Enable custom header
+  // https://developer.wordpress.org/reference/functions/add_theme_support/#custom-header
+  add_theme_support( 'custom-header', array (
+    // 'default-image'       => get_template_directory_uri() . '/dist/images/header-cover-default.jpg',
+    'header-text'         => false,
+    'width'               => 1000,
+    'height'              => 198,
+    'flex-width'          => true,
+    'flex-height'         => true,
+    'uploads'             => true,
+  ) );
+
+  // Enable custom logo
+  // https://developer.wordpress.org/reference/functions/add_theme_support/#custom-logo
+  add_theme_support( 'custom-logo', array(
+    'height'      => 50,
+    'width'       => 95,
+    'flex-width' => true,
+  	'header-text' => false
+  ) );
+
+  // Register default header
+  // https://developer.wordpress.org/reference/functions/register_default_headers/
+  register_default_headers( array (
+    'typewriter' => array(
+      'url'           => get_template_directory_uri() . '/dist/images/header-cover-default.jpg',
+      'thumbnail_url' => get_template_directory_uri() . '/dist/images/header-cover-default-thumb.jpg',
+      'description'   => 'Typewriter',
+    ),
+    'bench' => array(
+      'url'           => get_template_directory_uri() . '/dist/images/header-cover-default_2.jpg',
+      'thumbnail_url' => get_template_directory_uri() . '/dist/images/header-cover-default_2-thumb.jpg',
+      'description'   => 'Bench',
+    ),
+  ) );
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
 
@@ -108,17 +144,3 @@ add_action('init', __NAMESPACE__ . '\\add_oembed_soundcloud');
 if ( ! isset( $content_width ) ) {
 	$content_width = 894.6;
 }
-
-/**
- * Add custom logo support
- */
-function add_custom_logo() {
-
-	add_theme_support( 'custom-logo', array(
-		'height'      => 50,
-		'width'       => 95,
-		'flex-width' => true,
-	) );
-
-}
-add_action( 'after_setup_theme', __NAMESPACE__ . '\\add_custom_logo' );

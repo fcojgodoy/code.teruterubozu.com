@@ -28,6 +28,7 @@
         - Detect plugin Bozu User Contact Method
         - Check if there is a 'location' author meta
         - Show 'location' author meta -->
+        <?php // FIXME: is neccesary to check if the plugin is active? ?>
         <?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); ?>
         <?php if ( get_the_author_meta( 'location' ) && is_plugin_active( 'bozu-user-contact-methods/bozu-user-contact-methods.php' ) ) : ?>
           <em class="author-location icon-location"><?php echo get_the_author_meta( 'location' ); ?></em>
@@ -42,33 +43,30 @@
       </div>
 
       <div class="share">
-        <h4 class="share-title">Share this post</h4>
+        <h4 class="share-title"><?php _e( 'Share this post', 'teruterubozu' ) ?></h4>
         <!-- Add Twitter tweet button with Tweet Web Intent
               https://dev.twitter.com/web/tweet-button/web-intent
         -->
         <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
-        <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=<?php print(urlencode(the_title())); ?>&url=<?php print(urlencode(the_permalink())); ?>">
-          <!-- <span class="hidden">Share on Twitter</span> -->
+        <a class="icon-twitter" title="<?php _e( 'Share on Twitter', 'teruterubozu' ) ?>" href="https://twitter.com/intent/tweet?text=<?php print(urlencode(the_title())); ?>&url=<?php print(urlencode(the_permalink())); ?>">
         </a>
 
         <!-- Add Facebook share button -->
-        <a class="icon-facebook" href="<?php print(urlencode(the_permalink())); ?>"
+        <a class="icon-facebook" title="<?php _e( 'Share on Facebook', 'teruterubozu' ) ?>" href="<?php print(urlencode(the_permalink())); ?>"
           onclick="
           window.open(
             'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
             'facebook-share-dialog',
             'width=626,height=436');
             return false;">
-          <!-- <span class="hidden">Share on Facebook</span> -->
         </a>
 
         <!-- Add Google Plus share button -->
-        <a class="icon-google-plus" href="https://plus.google.com/share?url=http://bower.io"
+        <a class="icon-google-plus" title="<?php _e( 'Share on Google Plus', 'teruterubozu' ) ?>" href="https://plus.google.com/share?url=http://bower.io"
           onclick="
           javascript:window.open(
           this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
           return false;">
-          <!-- <span class="hidden">Share on Google-Plus</span> -->
         </a>
 
       </div>

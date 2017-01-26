@@ -40,7 +40,6 @@
     "oscarotero/env": "^1.0",
     "roots/wp-password-bcrypt": "1.0.0",
     "wpackagist-plugin/theme-check": "20160523.1",
-    "wpackagist-plugin/piklist": "0.9.9.9",
     "wpackagist-plugin/wp-optimize": "2.1.0"
   },
   "require-dev": {
