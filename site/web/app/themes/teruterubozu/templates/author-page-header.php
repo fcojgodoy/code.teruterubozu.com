@@ -3,7 +3,7 @@
   <div class="author-profile">
     <?php echo get_avatar( get_the_author_meta('ID'), 114, null, null, array ( 'class' => array ( 'author-avatar', 'border-simple') ) ); ?>
 
-    <?php use Roots\Sage\Titles; ?>
+    <?php use Teruterubozu\Titles; ?>
     <h1 class="author-title"><?php echo Titles\title(); ?></h1>
     <h2 class="author-bio author-bio--lg">
       <?php echo get_the_author_meta( 'description' ); ?>

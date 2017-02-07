@@ -1,4 +1,4 @@
-<?php use Roots\Sage\Titles; ?>
+<?php use Teruterubozu\Titles; ?>
 
 <div class="page-header">
   <h1><?php echo Titles\title(); ?></h1>

@@ -1,6 +1,6 @@
 <?php
 
-namespace Roots\Sage\BootstrapGallery;
+namespace Teruterubozu\BootstrapGallery;
 
 add_filter( 'post_gallery', __NAMESPACE__ . '\\bootstrap_gallery', 10, 3 );
 

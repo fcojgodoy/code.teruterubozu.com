@@ -1,8 +1,8 @@
 <?php
 
-namespace Roots\Sage\Customizer;
+namespace Teruterubozu\Customizer;
 
-use Roots\Sage\Assets;
+use Teruterubozu\Assets;
 
 /**
  * Add postMessage support

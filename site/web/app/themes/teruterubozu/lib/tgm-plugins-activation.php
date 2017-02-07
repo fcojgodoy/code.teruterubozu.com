@@ -1,4 +1,8 @@
 <?php
+
+namespace Teruterubozu\Plugins;
+
+
 /**
  * This file represents an example of the code that themes would use to register
  * the required plugins.
@@ -33,7 +37,7 @@
  */
 require_once get_template_directory() . '/lib/class-tgm-plugin-activation.php';
 
-add_action( 'tgmpa_register', 'teruterubozu_register_required_plugins' );
+add_action( 'tgmpa_register', __NAMESPACE__ . '\\register_required_plugins' );
 
 /**
  * Register the required plugins for this theme.
@@ -52,7 +56,7 @@ add_action( 'tgmpa_register', 'teruterubozu_register_required_plugins' );
  *
  * This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10.
  */
-function teruterubozu_register_required_plugins() {
+function register_required_plugins() {
 	/*
 	 * Array of plugin arrays. Required keys are name and slug.
 	 * If the source is NOT from the .org repo, then source is also required.

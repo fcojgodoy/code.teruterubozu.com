@@ -25,12 +25,9 @@
         </p>
 
         <!--
-        - Detect plugin Bozu User Contact Method
         - Check if there is a 'location' author meta
         - Show 'location' author meta -->
-        <?php // FIXME: is neccesary to check if the plugin is active? ?>
-        <?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); ?>
-        <?php if ( get_the_author_meta( 'location' ) && is_plugin_active( 'bozu-user-contact-methods/bozu-user-contact-methods.php' ) ) : ?>
+        <?php if ( get_the_author_meta( 'location' ) ) : ?>
           <em class="author-location icon-location"><?php echo get_the_author_meta( 'location' ); ?></em>
         <?php endif ; ?>
 

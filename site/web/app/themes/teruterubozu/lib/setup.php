@@ -1,8 +1,8 @@
 <?php
 
-namespace Roots\Sage\Setup;
+namespace Teruterubozu\Setup;
 
-use Roots\Sage\Assets;
+use Teruterubozu\Assets;
 
 /**
  * Theme setup
@@ -64,6 +64,21 @@ function setup() {
     'uploads'             => true,
   ) );
 
+  // Register default header
+  // https://developer.wordpress.org/reference/functions/register_default_headers/
+  register_default_headers( array (
+  'typewriter' => array(
+    'url'           => get_template_directory_uri() . '/dist/images/header-cover-default.jpg',
+    'thumbnail_url' => get_template_directory_uri() . '/dist/images/header-cover-default-thumb.jpg',
+    'description'   => 'Typewriter',
+  ),
+  'bench' => array(
+    'url'           => get_template_directory_uri() . '/dist/images/header-cover-default_2.jpg',
+    'thumbnail_url' => get_template_directory_uri() . '/dist/images/header-cover-default_2-thumb.jpg',
+    'description'   => 'Bench',
+  ),
+  ) );
+
   // Enable custom logo
   // https://developer.wordpress.org/reference/functions/add_theme_support/#custom-logo
   add_theme_support( 'custom-logo', array(
@@ -71,21 +86,6 @@ function setup() {
     'width'       => 95,
     'flex-width' => true,
   	'header-text' => false
-  ) );
-
-  // Register default header
-  // https://developer.wordpress.org/reference/functions/register_default_headers/
-  register_default_headers( array (
-    'typewriter' => array(
-      'url'           => get_template_directory_uri() . '/dist/images/header-cover-default.jpg',
-      'thumbnail_url' => get_template_directory_uri() . '/dist/images/header-cover-default-thumb.jpg',
-      'description'   => 'Typewriter',
-    ),
-    'bench' => array(
-      'url'           => get_template_directory_uri() . '/dist/images/header-cover-default_2.jpg',
-      'thumbnail_url' => get_template_directory_uri() . '/dist/images/header-cover-default_2-thumb.jpg',
-      'description'   => 'Bench',
-    ),
   ) );
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
