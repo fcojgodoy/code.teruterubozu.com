@@ -18,7 +18,6 @@ $sage_includes = [
   'lib/titles.php',    // Page titles
   'lib/wrapper.php',   // Theme wrapper class
   'lib/customizer.php', // Theme customizer
-  'lib/bootstrap-gallery.php', // Add Custom Headers support
   'lib/class-tgm-plugin-activation.php', // Class for TGM Plugin Activation
   'lib/tgm-plugins-activation.php' // TGM Plugin Activation
 ];

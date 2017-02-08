@@ -79,6 +79,7 @@ Source: https://pixabay.com/
 = 0.1.3 =
 * Released: Febrery 7, 2017
 - Fixed theme reviews required
+- Updated styles
 
 = 0.1.2 =
 * Released: January 19, 2017
