@@ -3051,7 +3051,7 @@ if ( ! class_exists( 'TGM_Bulk_Installer_Skin' ) ) {
  *
  * @since 2.2.0
  */
-add_action( 'admin_init', 'tgmpa_load_bulk_installer' );
+add_action( 'admin_init', __NAMESPACE__ . '\\tgmpa_load_bulk_installer' );
 if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 	/**
 	 * Load bulk installer

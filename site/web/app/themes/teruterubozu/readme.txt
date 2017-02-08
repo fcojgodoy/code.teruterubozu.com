@@ -22,6 +22,18 @@ For more information about Teruterubozu please go to https://github.com/fcojgodo
 4. Go to https://wordpress.org/support/theme/teruterubozu for help.
 5. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
+== Recommended plugins ==
+
+This themes come with suggested plugins. That plugins are recommended by Teruterubozu to provide additional functionality to your site.
+
+Piklist
+Source: https://piklist.com/
+Piklist provides help to create custom header images for tags and authors pages.
+
+Bozu User Contact Methods
+Source: https://github.com/fcojgodoy/Bozu-User-Contact-Methods
+Bozu User Contact Methods help to customize the contact information fields available to your WordPress users.
+
 == Third-party resources ==
 
 Teruterubozu bundles the following third-party resources:

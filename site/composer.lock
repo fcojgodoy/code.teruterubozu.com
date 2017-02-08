@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8a3eae30c738173f7947d747fa7aa8a8",
-    "content-hash": "ce9f997f219218f072fefd654439df9a",
+    "hash": "8751cbfb53d7c2b337ee83fbe7384852",
+    "content-hash": "240da8826f2f83015aeedb748a42f606",
     "packages": [
         {
             "name": "composer/installers",
@@ -340,6 +340,46 @@
                 "environment"
             ],
             "time": "2016-09-01 10:05:43"
+        },
+        {
+            "name": "wpackagist-plugin/log-deprecated-calls",
+            "version": "1.4",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/log-deprecated-calls/",
+                "reference": "tags/1.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/log-deprecated-calls.1.4.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/log-deprecated-calls/"
+        },
+        {
+            "name": "wpackagist-plugin/log-deprecated-notices",
+            "version": "0.4",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/log-deprecated-notices/",
+                "reference": "tags/0.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/log-deprecated-notices.0.4.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/log-deprecated-notices/"
         },
         {
             "name": "wpackagist-plugin/theme-check",
