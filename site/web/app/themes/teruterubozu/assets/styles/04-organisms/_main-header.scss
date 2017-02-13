@@ -4,4 +4,8 @@
 	width: 100%;
 	background: transparent none no-repeat scroll center center / cover;
 	overflow: hidden;
+	
+	:not(.no-cover).& {
+		margin-bottom: 100px;
+	}
 }
